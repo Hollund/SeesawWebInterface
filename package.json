@@ -1,0 +1,11 @@
+{
+  "name": "interface000",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+
+  "scripts": {
+    "postinstall": "find ./* -name package.json -maxdepth 1 -execdir npm install;"
+  }
+}
+  
