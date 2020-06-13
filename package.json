@@ -2,6 +2,9 @@
   "name": "interface000",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "react-flexbox-grid": "^2.1.2",
+    "redux": "^4.0.5"
+  }
 }
-  
