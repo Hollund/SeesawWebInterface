@@ -1,42 +1,21 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import React from 'react'
+import AppBar from '@material-ui/core/AppBar'
+import Typography from '@material-ui/core/Typography';
 
-export function Navbar(props) {
-  const classes = useStyles();
-  return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            {props.name}
-          </Typography>
-          <Typography variant="h9" className={classes.gitlink}>
-            Github link: {props.githubrepo}
-          </Typography>
+const NavBar = () => {
+    return(
+        <div>
+        <AppBar position="static">
 
-        </Toolbar>
+                <Typography variant="h4" color="inherit" align="left">
+                SeeSaw Web Interface
+                </Typography>
+                <Typography variant="subtitle" color="inherit" align="right">
+                    Github repo:  https://github.com/Hollund/SeesawWebInterface
+                </Typography>
 
-      </AppBar>
-
-    </div>
-  );
+        </AppBar>
+        </div>
+    )
 }
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      flexGrow: 1,
-    },
-    title: {
-      textAlign:"left",
-      flexGrow: 1,
-    },
-    gitlink: {
-      textAlign:"right",
-      flexGrow:1,
-    }
-  }),
-);
-
-
+export default NavBar;
