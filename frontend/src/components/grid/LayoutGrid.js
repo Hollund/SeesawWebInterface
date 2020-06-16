@@ -1,26 +1,9 @@
-
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import DataOut from '../datafolder/DataOut';
+import DataOut from './datafolder/DataOut';
 import Anima from '../../animation/anima';
-import { sensorData } from '../datafolder/sensorData.1';
-import { accelData } from '../datafolder/accelData';
-import { encoderData } from '../datafolder/EncoderData';
-
-const rows = [
-  sensorData('sensor 1'),
-  sensorData('sensor 2'),
-  sensorData('Sensor 3'),
-  sensorData('sensor 4'),
-  sensorData('Sensor 5'),
-  sensorData('sensor 6'),
-  sensorData('Sensor 7'),
-  sensorData('sensor 8'),
-  encoderData('encoder'),
-  accelData('Accelloremeter'),
-];
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,11 +16,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function LayoutGrid() {
+export default function LayoutGrid(props) {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div>
       <Grid container spacing={1}>
         <Grid item xs>
           <Paper className={classes.paper}>
@@ -46,16 +29,14 @@ export default function LayoutGrid() {
         </Grid>
 
         <Grid item xs>
-          <Paper className={classes.paper}>,
-          xs  
-          </Paper>
+          <Paper className={classes.paper}>  </Paper>
         </Grid>
       </Grid>
 
       <Grid container spacing={1}>
         <Grid item xs>
           <Paper className={classes.paper}>
-            <DataOut>{rows}</DataOut>
+            <DataOut irSensor={props.irSensor}></DataOut>
           </Paper>
         </Grid>
 
@@ -66,6 +47,7 @@ export default function LayoutGrid() {
         </Grid>
       </Grid>
     </div>
+
   );
 }
 
