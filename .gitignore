@@ -3,3 +3,4 @@ interface_id_rsa
 interface_id_rsa.pub
 seesawWorkSpace.code-workspace
 package-lock.json
+.vscode
